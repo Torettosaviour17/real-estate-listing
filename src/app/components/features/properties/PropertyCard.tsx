@@ -11,18 +11,13 @@ export default function PropertyCard({ property }: PropertyCardProps) {
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 hover:translate-y-[-2px]">
       {/* Image Section - UPDATED WITH ACTUAL IMAGES */}
       <div className="relative h-48 bg-gray-200 overflow-hidden">
-        {/* Actual Property Image */}
+        {/* Property Image */}
         <div
           className="w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url("${property.images[0]}")`,
+            backgroundImage: `url(${property.images[0]})`,
           }}
-        >
-          {/* Fallback if image doesn't load */}
-          <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-            <span className="text-gray-400 text-sm">Property Image</span>
-          </div>
-        </div>
+        ></div>
 
         {/* Property Type Badge */}
         <div className="absolute top-3 right-3">

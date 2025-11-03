@@ -24,7 +24,7 @@ export const properties: Property[] = [
       parking: 1,
     },
     amenities: ["Parking", "Gym", "Pool", "Balcony", "Concierge"],
-    images: ["/images/properties/property-1.jpg"], // Updated path
+    images: ["/images/properties/property-2.jpg"], // Updated path
     agent: {
       id: "1",
       name: "John Smith",
@@ -59,7 +59,7 @@ export const properties: Property[] = [
       parking: 2,
     },
     amenities: ["Pool", "Garden", "Garage", "Security", "Beach Access"],
-    images: ["/images/properties/property-2.jpg"], // Updated path
+    images: ["/images/properties/property-3.jpg"], // Updated path
     agent: {
       id: "2",
       name: "Sarah Johnson",
@@ -93,7 +93,7 @@ export const properties: Property[] = [
       parking: 2,
     },
     amenities: ["Backyard", "Garage", "Fireplace", "Renovated Kitchen"],
-    images: ["/images/properties/property-3.jpg"], // Updated path
+    images: ["/images/properties/property-4.jpg"], // Updated path
     agent: {
       id: "3",
       name: "Mike Davis",
