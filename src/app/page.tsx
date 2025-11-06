@@ -117,12 +117,12 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 🏠 Featured Properties Section - CLEAN WHITE BACKGROUND */}
+      {/* 🏠 Featured Properties Section - Show Only 3 Properties */}
       <section className="relative py-20 bg-white overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <motion.span
-              className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4"
+              className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4 backdrop-blur-sm"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -130,28 +130,28 @@ export default function Home() {
               Featured Properties
             </motion.span>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              <AnimatedText>Discover Your</AnimatedText>{" "}
+              <AnimatedText>Featured</AnimatedText>{" "}
               <AnimatedText delay={0.2}>
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Perfect Home
+                  Listings
                 </span>
               </AnimatedText>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Handpicked selection of quality homes. Find your perfect match
-              from our curated collection.
+              Discover our handpicked selection of premium properties. Find your
+              perfect match from our curated collection.
             </p>
           </AnimatedSection>
 
-          {/* Property Cards Grid */}
+          {/* Property Cards Grid - Only Show First 3 Properties */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {properties.map((property, index) => (
+            {properties.slice(0, 3).map((property, index) => (
               <motion.div key={property.id} variants={itemVariants}>
                 <PropertyCard property={property} />
               </motion.div>
@@ -159,13 +159,16 @@ export default function Home() {
           </motion.div>
 
           {/* Browse More Button */}
-          <AnimatedSection delay={0.6} className="text-center mt-16">
+          <AnimatedSection
+            delay={0.6}
+            className="text-center mt-16 relative z-10"
+          >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/properties"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl backdrop-blur-sm"
               >
-                🌟 Browse More Properties
+                🌟 View All {properties.length} Properties
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
@@ -177,7 +180,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-
       {/* 📊 Stats Section - CLEAN BACKGROUND */}
       <section className="relative py-20 bg-gray-50 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -215,7 +217,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* 🚀 CTA Section - ADD YOUR BACKGROUND IMAGE HERE */}
       <section className="relative py-20 text-white overflow-hidden">
         {/* ADD YOUR BACKGROUND IMAGE IN THIS DIV */}
