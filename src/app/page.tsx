@@ -95,7 +95,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 whitespace-nowrap shadow-lg border border-orange-400/50"
               >
-                🪕 Search Properties
+                🔍 Search Properties
               </motion.button>
             </motion.div>
           </motion.div>
